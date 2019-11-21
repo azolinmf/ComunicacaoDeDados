@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="plotly-latest.min.js"></script>
+    <title>Comunicação de Dados</title>
+  </head>
+  <body>
+    <h1>Comunicação de Dados</h1>
+    <h2> Codificação de linha </h2>
+    <span> Algoritmo 2B1Q </span>
+
+
+  <!-- Tab links -->
+  <div class="tab">
+    <button class="tablinks" onclick="switchTab(event, 'Server')">Server</button>
+    <button class="tablinks" onclick="switchTab(event, 'Client')">Client</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="Server" class="tabcontent">
+    <h3>Server</h3>
+    <p>Digite a senha para descriptografar</p>
+    <input type='text'>
+
+    <p>Mensagem:</p>
+    <input type='text' disabled>
+    <p>Mensagem em binário</p>
+    <input type='text' disabled>
+    <p>Mensagem encriptada</p>
+    <input type='text' disabled>
+  </div>
+
+  <div id="Client" class="tabcontent">
+    <h3>Client</h3>
+    <p>Digite um IP destino</p>
+    <input type='text' id='ipText'>
+
+    <p>Digite uma mensagem</p>
+    <input type='text' class='inputs' id='message'>
+    <p>Digite uma senha  para criptografia</p>
+    <input type='text'  class='inputs' id='password'>
+   
+    <p>Mensagem em binário</p>
+    <input type='text' disabled id='binary_message'>
+    <p>Mensagem encriptada</p>
+    <input type='text' disabled id='crypto_message'>
+
+    <div id="graph" style="width:1000px;height:500px;"></div>
+  </div>
+
+
+    <!-- You can also require other files to run in this process -->
+    <script src='renderer.js'> </script>
+  </body>
+</html>
