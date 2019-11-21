@@ -74,9 +74,11 @@ function twoBoneQ(message) {
 	var prev = 1
 	translate = {
 		'00': 1,
-		'01': 3,
+        '01': 3,
+        '0': 1,
 		'10': -1,
-		'11': -3
+        '11': -3,
+        '1': -1
 	}
 
 	return message.match(/.{1,2}/g).map((x) => {
@@ -98,7 +100,7 @@ function oneQtwoB(signal) {
 		result = translate[prev*x]
 		prev = x > 0 ? 1 : -1
 		return result
-	})
+	}).join('')
 }
 
 function XYdata(binary) {
@@ -119,7 +121,7 @@ function XYdata(binary) {
 }
 
 function showMessage(data_received) {
-	const codedMsg = data_received.toString()
+	const codedMsg = data_received
     const mensagem = oneQtwoB(codedMsg)
     const charList = mensagem.match(/.{1,9}/g)
 
@@ -132,7 +134,7 @@ function showMessage(data_received) {
     $('#message_server').val(finalMessage)
     
 
-    //Plotly.newPlot('graph_server', XYdata(twoBoneQ(crypto_val)), layout)
+    Plotly.newPlot('graph_server', XYdata(data_received), layout)
 }
 
 module.exports.showMessage = showMessage

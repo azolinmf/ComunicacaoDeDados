@@ -1,6 +1,6 @@
 const __net = require('net')
 let mensagem
-let renderer = require('./renderer.js')
+let renderer_ = require('./renderer.js')
 
 const server = __net.createServer()
 
@@ -11,7 +11,7 @@ server.on('connection', (socket) => {
 		mensagem = data
 		console.log('Received from client: ' + mensagem)
 
-        renderer.showMessage(mensagem)
+        renderer_.showMessage(mensagem.toString().split(','))
 	})
 })
 
