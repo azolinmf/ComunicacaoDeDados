@@ -1,5 +1,6 @@
 const net = require('net')
 let ipDestino = $('#ipText')
+const renderer = require('renderer.js')
 
 const client = new net.Socket()
 
@@ -16,7 +17,7 @@ client.on('data', (data) => {
 })
 
 $('#send_button').mouseup(() => {
-    client.write($('#crypto_message').val())
+    client.write(renderer['codedMessage'])
 })
 
 client.on('close', () => {
