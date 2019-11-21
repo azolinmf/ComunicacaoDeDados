@@ -59,11 +59,11 @@ $('.inputs').bind('input propertychange', function() {
 })
 
 function cripto(text, password) {
-    return text.split('').map(function (x,i) {return (x.charCodeAt(0) + password[i%password.length].charCodeAt(0)).toString(2)}).join('')
+    return text.split('').map(function (x,i) {return fill_char(x.charCodeAt(0) + password[i%password.length].charCodeAt(0))}).join('')
 }
 
-function uncripto(text, password) {
-    return text.split('').map(function (x,i) {return (x.charCodeAt(0) - password[i%password.length].charCodeAt(0)).toString(2)}).join('')
+function uncripto(charList, password) {
+    return charList.map(function (x,i) {return fill_char(parseInt(x,2) - password[i%password.length].charCodeAt(0))}).join('')
 }
 
 function XYdata(binary) {
@@ -84,10 +84,16 @@ function XYdata(binary) {
 }
 
 function showMessage(data_received) {
-    mensagem = data_received.toString()
-    $('#binary_message_server').val(mensagem) 
-    const decriptedMessage = uncripto(mensagem, $('#passwordServer').val())
-    $('#crypto_message_server').val(decriptedMessage) 
+    const mensagem = data_received.toString()
+    const charList = mensagem.match(/.{1,9}/g)
+
+    $('#crypto_message_server').val(mensagem) 
+
+    const decriptedMessage = uncripto(charList, $('#passwordServer').val())
+    $('#binary_message_server').val(decriptedMessage) 
+
+    const finalMessage = decriptedMessage.match(/.{1,9}/g).map((x) => String.fromCharCode(parseInt(x,2))).join('')
+    $('#message_server').val(finalMessage)
 
 }
 
