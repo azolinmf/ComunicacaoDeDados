@@ -4,8 +4,8 @@ let ipDestino = $('#ipText').val()
 const client = new net.Socket()
 
 $('#connection_button').mouseup(() => {
-    client.connect(1337, ipDestino["ipDestino"], () => {
-        console.log('Connected to: ' + ipDestino["ipDestino"])
+    client.connect(1337, ipDestino, () => {
+        console.log('Connected to: ' + ipDestino)
         $('#ipText').css('color', 'green')
     })
 })

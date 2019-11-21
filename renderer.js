@@ -62,6 +62,10 @@ function cripto(text, password) {
     return text.split('').map(function (x,i) {return (x.charCodeAt(0) + password[i%password.length].charCodeAt(0)).toString(2)}).join('')
 }
 
+function uncripto(text, password) {
+    return text.split('').map(function (x,i) {return (x.charCodeAt(0) - password[i%password.length].charCodeAt(0)).toString(2)}).join('')
+}
+
 function XYdata(binary) {
 	var x = [0]
 	var y = [binary[0]]
@@ -79,3 +83,10 @@ function XYdata(binary) {
 	return [{x: x, y: y}]
 }
 
+function showMessage(mensagem) {
+
+    $('#binary_message_server').val(mensagem) 
+    const decriptedMessage = uncripto(mensagem, $('#passwordServer').val())
+    $('#crypto_message_server').val(decriptedMessage) 
+
+}

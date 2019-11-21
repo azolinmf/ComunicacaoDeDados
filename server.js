@@ -1,8 +1,8 @@
-const net = require('net')
+const __net = require('net')
 let mensagem
 let renderer = require('./renderer.js')
 
-const server = net.createServer()
+const server = __net.createServer()
 
 server.on('connection', (socket) => {
 	socket.write('Echo server\r\n')

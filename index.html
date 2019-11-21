@@ -25,19 +25,20 @@
     <h3>Server</h3>
 
     <p>Digite a senha para descriptografar</p>
-    <input type='text'>
+    <input type='text' id='passwordServer'>
 
     <p>Mensagem:</p>
     <input type='text' disabled>
     <p>Mensagem em binário</p>
-    <input type='text' disabled>
+    <input type='text' disabled id='binary_message_server'>
     <p>Mensagem encriptada</p>
-    <input type='text' disabled>
+    <input type='text' disabled id='crypto_message_server'>
   </div>
 
   <div id="Client" class="tabcontent">
     <h3>Client</h3>
     
+    <button type='button' id='send_button'> Enviar! </button>
 
     <div id="ipDiv">
         <p>Digite um IP destino</p>
@@ -48,7 +49,7 @@
 
     <p>Digite uma mensagem</p>
     <input type='text' class='inputs' id='message'>
-    <p>Digite uma senha  para criptografia</p>
+    <p>Digite uma senha para criptografia</p>
     <input type='text'  class='inputs' id='password'>
    
     <p>Mensagem em binário</p>
