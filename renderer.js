@@ -83,10 +83,12 @@ function XYdata(binary) {
 	return [{x: x, y: y}]
 }
 
-function showMessage(mensagem) {
-
+function showMessage(data_received) {
+    mensagem = data_received.toString()
     $('#binary_message_server').val(mensagem) 
     const decriptedMessage = uncripto(mensagem, $('#passwordServer').val())
     $('#crypto_message_server').val(decriptedMessage) 
 
 }
+
+module.exports.showMessage = showMessage

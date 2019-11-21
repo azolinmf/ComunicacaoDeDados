@@ -1,11 +1,11 @@
 const net = require('net')
-let ipDestino = $('#ipText').val()
+let ipDestino = $('#ipText')
 
 const client = new net.Socket()
 
 $('#connection_button').mouseup(() => {
-    client.connect(1337, ipDestino, () => {
-        console.log('Connected to: ' + ipDestino)
+    client.connect(1337, ipDestino.val(), () => {(
+        console.log('Connected to: ' + ipDestino.val()))
         $('#ipText').css('color', 'green')
     })
 })
