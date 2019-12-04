@@ -45,6 +45,13 @@ function fill_char(char) {
     return '0'.repeat(9-unfilled.length) + unfilled
 }
 
+$('#crypto_message').bind('input propertychange', function() {
+	const crypto_val = $('#crypto_message').val()
+	codedMessage = twoBoneQ(crypto_val)
+    Plotly.newPlot('graph', XYdata(codedMessage), layout)
+})
+
+
 var codedMessage
 $('.inputs').bind('input propertychange', function() {
 	const text = $('#message').val()
