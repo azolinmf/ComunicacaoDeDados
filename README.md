@@ -1,4 +1,5 @@
-This Desktop app establishes a cipher communication between two hosts, using line code (algorithm 2B1Q). 
+This Desktop app establishes a communication between two hosts, using Vigenère cipher and line code (algorithm 2B1Q). 
 Made with Electron framework.
 
+To install the dependencias,use `npm install`.
 To run the app, use `npm start`.
