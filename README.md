@@ -2,6 +2,6 @@ This Desktop app establishes a communication between two hosts, using Vigenère 
 Made with Electron framework.
 
 
-To install the dependencias, use `npm install`.
+To install the dependencies, use `npm install`.
 
 To run the app, use `npm start`.
