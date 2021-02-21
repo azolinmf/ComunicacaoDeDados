@@ -1,10 +1,39 @@
+
+input {
+  min-height: 2rem;
+  border-radius: 5px;
+  border-style: groove;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+}
+
+button {
+  min-height: 2rem;
+  border-radius: 7px;
+  background-color: #6495ed;
+  color: white;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  border-style: none;
+}
+body {
+  font-family: sans-serif;
+}
+p {
+  margin-bottom: 0;
+}
 /* Style the tab */
 .tab {
+    margin-top: 1rem;
+    border-radius: 8px;
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #6495ed;
+    opacity: 0.8;
   }
-  
+
   /* Style the buttons that are used to open the tab content */
   .tab button {
     background-color: inherit;
@@ -15,17 +44,18 @@
     padding: 14px 16px;
     transition: 0.3s;
   }
-  
+
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #ddd;
+    background-color: #4c83e6;
   }
-  
+
   /* Create an active/current tablink class */
   .tab button.active {
-    background-color: #ccc;
+    background-color: #3774e2;
+    opacity: 1;
   }
-  
+
   /* Style the tab content */
   .tabcontent {
     display: none;
